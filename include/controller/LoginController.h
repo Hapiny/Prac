@@ -1,9 +1,9 @@
+#pragma once
 #include <memory>
 #include <string>
 
-class FileReader;
-
 class User;
+class FileReader;
 
 class LoginController 
 {

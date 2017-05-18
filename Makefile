@@ -1,11 +1,11 @@
 compiler = g++
-include_flg = -Iinclude/
-src_flg = src/*.cpp
+include_flg = -Iinclude/controller -Iinclude/model -Iinclude/interface -Iinclude/utils
+src_flg = src/controller/*.cpp src/model/*.cpp src/interface/*.cpp src/utils/*.cpp
 comp_flg = -std=c++14 -Wall -Werror
 test_flg = --coverage -fprofile-dir=test/GCNO_GCDA -Itest/googletest/include test/src/*.cpp test/libgtest.a -pthread
 
-main: src/main.cpp
-	$(compiler) $(comp_flg)  src/main.cpp -o main
+main: main.cpp
+	$(compiler) $(comp_flg)  $(include_flg) $(src_flg) main.cpp -o main
 
 tests: test/src/*.cpp
 	mkdir test/GCNO_GCDA

@@ -1,6 +1,7 @@
 #include "FileReader.h"
 #include "Splitter.h"
 #include "User.h"
+#include <iostream>
 
 FileReader::FileReader(std::string filename) 
     : filename(filename)  {}

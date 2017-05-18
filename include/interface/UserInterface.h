@@ -1,8 +1,7 @@
+#pragma once
 #include <memory>
 #include "LoginController.h"
 
-
-class User;
 
 class UserInterface
 {
