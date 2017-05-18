@@ -13,4 +13,4 @@ private:
     std::string nickname;
     std::string password;
     int id;
-}
+};
