@@ -1,6 +1,6 @@
 compiler = g++
-include_flg = -Iinclude
-src_flg = -Isrc
+include_flg = -Iinclude/
+src_flg = src/*.cpp
 comp_flg = -std=c++14 -Wall -Werror
 test_flg = --coverage -fprofile-dir=test/GCNO_GCDA -Itest/googletest/include test/src/*.cpp test/libgtest.a -pthread
 
