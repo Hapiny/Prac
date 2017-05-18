@@ -9,7 +9,7 @@ class LoginController
 {
 public:
     LoginController();
-    std::shared_ptr<User> get_user(std::string);
+    std::shared_ptr<User> get_user(std::string, std::string);
 private:
     std::shared_ptr<FileReader> reader;
 };

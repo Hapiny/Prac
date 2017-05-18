@@ -14,7 +14,10 @@ void UserInterface::login()
     std::cout << "Enter nickname: ";
     std::string login;
     std::getline(std::cin, login);
-    std::shared_ptr<User> user = login_controller.get_user(login);
+    std::cout << "Enter password: ";
+    std::string pass;
+    std::getline(std::cin, pass);
+    std::shared_ptr<User> user = login_controller.get_user(login, pass);
     if (user != nullptr) 
     {
         this->user = user;
