@@ -9,12 +9,9 @@ std::shared_ptr<User> LoginController::get_user(std::string login, std::string p
     std::vector<std::shared_ptr<User>> users = reader->users();
     for (std::shared_ptr<User> user : users) 
     {
-        if (user->get_nickname() == login) 
+        if (user->get_nickname() == login && user->get_password() == password) 
         {
-            if (user->get_password() == password)
-            {
-            	return user;
-            }	
+            return user;	
         }
     }
     return nullptr;

@@ -9,7 +9,11 @@ class FileReader
 {
 public:
     FileReader(std::string filename);
-    std::vector<std::shared_ptr<User>> users() const;
+    std::vector<std::shared_ptr<User>> users();
+    int get_last_id();
+    void set_err(int);
+    int get_err() const;
 private:
     std::string filename;
+    int num_err;
 };

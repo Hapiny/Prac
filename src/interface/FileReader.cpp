@@ -2,17 +2,18 @@
 #include "Splitter.h"
 #include "User.h"
 #include <iostream>
+#include <fstream>
 
 FileReader::FileReader(std::string filename) 
-    : filename(filename)  {}
+    : filename(filename), num_err(0)  {}
 
-std::vector<std::shared_ptr<User>> FileReader::users() const 
+std::vector<std::shared_ptr<User>> FileReader::users() 
 {
     std::vector<std::shared_ptr<User>> res;
     std::ifstream infile(filename);
     Splitter splitter(',');
     std::string line;
-
+    int tmp = 0;
     while (std::getline(infile, line)) 
     {
         std::vector<std::string> splitted = splitter.split(line);
@@ -28,9 +29,26 @@ std::vector<std::shared_ptr<User>> FileReader::users() const
         catch (std::invalid_argument) 
         {
             std::cerr << "WARNING: User reading error!" << std::endl;
+            tmp++;
             continue ;
         }
     }
-
+    this->set_err(tmp);
     return res;
+}
+
+void FileReader::set_err(int t)
+{
+    num_err = t;
+}
+
+int FileReader::get_err() const 
+{
+    return num_err;
+}
+
+int FileReader::get_last_id()
+{
+    std::vector<std::shared_ptr<User>> users = this->users();
+    return users[users.size()-1]->get_id();
 }

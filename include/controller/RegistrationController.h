@@ -1,0 +1,6 @@
+class RegistrationContoller
+{
+public:
+private:
+	
+}

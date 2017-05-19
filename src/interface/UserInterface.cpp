@@ -1,4 +1,5 @@
 #include "UserInterface.h"
+#include "User.h"
 #include <iostream>
 #include <string>
 
@@ -33,10 +34,10 @@ void UserInterface::info() const
 {
     if (user != nullptr) 
     {
-        std::cout << "User name: " << user->name() << std::endl;
-        std::cout << "User nickname: " << user->nickname() << std::endl;
-        std::cout << "User password: " << user->password() << std::endl;
-        std::cout << "User id: " << user->id() << std::endl;
+        std::cout << "User name: " << user->get_name() << std::endl;
+        std::cout << "User nickname: " << user->get_nickname() << std::endl;
+        std::cout << "User password: " << user->get_password() << std::endl;
+        std::cout << "User id: " << user->get_id() << std::endl;
     }
     else 
     {
