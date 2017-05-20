@@ -1,10 +1,11 @@
 #include "LoginController.h"
 #include "User.h"
 #include "FileReader.h"
+#include <iostream>
 
-LoginController::LoginController() : reader(std::shared_ptr<FileReader>(new FileReader("users.txt"))) {}
+LoginController::LoginController() : reader(std::shared_ptr<FileReader>(new FileReader("users/users.txt"))) {}
 
-std::shared_ptr<User> LoginController::get_user(std::string login, std::string password) 
+std::shared_ptr<User> LoginController::get_user(std::string login, std::string password) const
 {
     std::vector<std::shared_ptr<User>> users = reader->users();
     for (std::shared_ptr<User> user : users) 
@@ -15,4 +16,11 @@ std::shared_ptr<User> LoginController::get_user(std::string login, std::string p
         }
     }
     return nullptr;
+}
+
+int LoginController::get_last_id() const
+{
+    std::vector<std::shared_ptr<User>> users = reader->users();
+    int tmp = users.size()-1;
+    return users[tmp]->get_id();
 }

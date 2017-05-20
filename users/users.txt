@@ -1,4 +1,3 @@
 Artem,Hapiny,abrakadabra,0
 Vladimir,Volk,man123,1
-Alex,Mango,double56,2
-Morgan,Maliphisenta,crack
+Alex,Mango,double56,2Pivo,Napolu,575,3

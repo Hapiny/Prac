@@ -12,7 +12,9 @@ void help()
     std::cout << BOLD(FGRN("➋ ")) << ITAL(UNDL("Log in to the system.")) << std::endl; 
     std::cout << BOLD(FGRN("➌ ")) << ITAL(UNDL("Logout.")) << std::endl;
     std::cout << BOLD(FGRN("➍ ")) << ITAL(UNDL("Info about user.")) << std::endl;
-    std::cout << BOLD(FGRN("➎ ")) << ITAL(UNDL("Exit.")) << std::endl;
+    std::cout << BOLD(FGRN("➎ ")) << ITAL(UNDL("Registration.")) << std::endl;
+    std::cout << BOLD(FGRN("➏ ")) << ITAL(UNDL("Clear screen.")) << std::endl;
+    std::cout << BOLD(FGRN("➐ ")) << ITAL(UNDL("Exit")) << std::endl;
     std::cout << BOLD(FYEL("▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄")) << std::endl;
     std::cout << BOLD(FYEL("▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄")) << std::endl;
 }
@@ -39,12 +41,21 @@ int main()
         else if (str == "info" || str == "4") 
         {
             ui.info();
+        }
+        else if (str == "clear" || str == "6")
+        {
+            system("clear");
+            help();
+        }
+        else if (str == "reg" || str == "5")
+        {
+            ui.registration();
         } 
         else if (str == "help" || str == "1") 
         {
             help();
         } 
-        else if (str == "exit" || str == "5") 
+        else if (str == "exit" || str == "7") 
         {
         	std::cout << ITAL(BOLD(FGRN("☻  Have a nice day ☻ "))) << std::endl;
             return 0;

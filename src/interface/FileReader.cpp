@@ -46,9 +46,3 @@ int FileReader::get_err() const
 {
     return num_err;
 }
-
-int FileReader::get_last_id()
-{
-    std::vector<std::shared_ptr<User>> users = this->users();
-    return users[users.size()-1]->get_id();
-}
