@@ -2,10 +2,25 @@
 #include "Splitter.h"
 #include "User.h"
 #include <iostream>
+#include <string>
 #include <fstream>
 
 FileReader::FileReader(std::string filename) 
     : filename(filename), num_err(0)  {}
+
+std::vector<std::string> FileReader::doc_types() const
+{
+    std::vector<std::string> res;
+    std::ifstream infile("doc_types.txt");
+    Splitter splitter(' ');
+    std::string line;
+    while (std::getline(infile, line)) 
+    {
+        std::vector<std::string> splitted = splitter.split(line);
+        if(splitted.size()) res.push_back(splitted[0]);
+    }
+    return res;
+}
 
 std::vector<std::shared_ptr<User>> FileReader::users() 
 {

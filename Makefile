@@ -4,8 +4,11 @@ src_flg = src/controller/*.cpp src/model/*.cpp src/interface/*.cpp src/utils/*.c
 comp_flg = -std=c++14 -Wall -Werror
 test_flg = --coverage -fprofile-dir=test/GCNO_GCDA -Itest/googletest/include test/src/*.cpp test/libgtest.a -pthread
 
-main: main.cpp
-	$(compiler) $(comp_flg)  $(include_flg) $(src_flg) main.cpp -o main
+user: src/main.cpp
+	$(compiler) $(comp_flg)  $(include_flg) $(src_flg) src/main.cpp -o user
+
+admin: src/admin.cpp
+	$(compiler) $(comp_flg)  $(include_flg) $(src_flg) src/admin.cpp -o admin	
 
 tests: test/src/*.cpp
 	mkdir test/GCNO_GCDA
@@ -13,8 +16,9 @@ tests: test/src/*.cpp
 	mv *.gcno test/GCNO_GCDA
 	
 clean: 
-	rm main tests *.info -R test/GCNO_GCDA -R coverage/
-
+	rm user admin tests *.info -R test/GCNO_GCDA -R coverage
+	rm -R users/Gleb
+	
 coverage:
 	lcov -c --directory test/GCNO_GCDA -o coverage.info
 	mkdir coverage

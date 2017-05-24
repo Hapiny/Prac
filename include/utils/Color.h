@@ -1,3 +1,5 @@
+#pragma once
+#include <iostream>
 /* FOREGROUND */
 /* SIMPLE TEXT COLORS */
 #define RST   "\x1B[0m" //default color
@@ -23,3 +25,45 @@
 #define BOLD(x) "\x1B[1m" x RST//bold
 #define ITAL(x) "\x1B[3m" x RST//italics
 #define UNDL(x) "\x1B[4m" x RST//underlined
+
+void main_menu() 
+{
+    std::cout << BOLD(FYEL("▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄")) << std::endl;
+    std::cout << BOLD(FYEL("▀▄▀▄▀▄▀▄▀▄▀▄▀ ")) << BOLD(FCYN("MENU")) << BOLD(FYEL(" ▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄")) << std::endl;  
+    std::cout << BOLD(FYEL("▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄")) << std::endl;
+    std::cout << BOLD(FRED("➊ ")) << ITAL(UNDL("Help.")) << std::endl;
+    std::cout << BOLD(FYEL("➋ ")) << ITAL(UNDL("Log in to the system.")) << std::endl; 
+    std::cout << BOLD(FGRN("➌ ")) << ITAL(UNDL("Registration.")) << std::endl;
+    std::cout << BOLD(FMAG("➍ ")) << ITAL(UNDL("Clear screen.")) << std::endl;
+    std::cout << BOLD(FCYN("➎ ")) << ITAL(UNDL("Exit")) << std::endl;
+    std::cout << BOLD(FYEL("▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄")) << std::endl;
+    std::cout << BOLD(FYEL("▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄")) << std::endl;
+}
+
+void user_menu()
+{
+    std::cout << BOLD(FYEL("▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄")) << std::endl;
+    std::cout << BOLD(FYEL("▀▄▀▄▀▄▀▄▀▄▀▄▀ ")) << BOLD(FCYN("MENU")) << BOLD(FYEL(" ▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄")) << std::endl;  
+    std::cout << BOLD(FYEL("▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄")) << std::endl;
+    std::cout << BOLD(FGRN("➊ ")) << ITAL(UNDL("Logout.")) << std::endl;
+    std::cout << BOLD(FGRN("➋ ")) << ITAL(UNDL("Info about user.")) << std::endl;
+    std::cout << BOLD(FGRN("➌ ")) << ITAL(UNDL("Show available document types.")) << std::endl;
+    std::cout << BOLD(FGRN("➍ ")) << ITAL(UNDL("Clear screen.")) << std::endl;
+    std::cout << BOLD(FGRN("➎ ")) << ITAL(UNDL("Help.")) << std::endl;
+    std::cout << BOLD(FYEL("▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄")) << std::endl;
+    std::cout << BOLD(FYEL("▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄")) << std::endl;
+}
+//➊➋➌➍➎➏➐➑
+
+void admin_menu()
+{
+    std::cout << BOLD(FYEL("▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄")) << std::endl;
+    std::cout << BOLD(FYEL("▀▄▀▄▀▄▀▄▀▄▀▄▀ ")) << BOLD(FCYN("MENU")) << BOLD(FYEL(" ▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄")) << std::endl;  
+    std::cout << BOLD(FYEL("▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄")) << std::endl;
+    std::cout << BOLD(FGRN("➊ ")) << ITAL(UNDL("Add new document type.")) << std::endl;
+    std::cout << BOLD(FGRN("➋ ")) << ITAL(UNDL("Clear screen.")) << std::endl;
+    std::cout << BOLD(FGRN("➌ ")) << ITAL(UNDL("Help.")) << std::endl;
+    std::cout << BOLD(FGRN("➍ ")) << ITAL(UNDL("Exit.")) << std::endl;
+    std::cout << BOLD(FYEL("▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄")) << std::endl;
+    std::cout << BOLD(FYEL("▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄")) << std::endl;
+}

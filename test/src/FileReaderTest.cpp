@@ -8,14 +8,9 @@
 
 TEST(FileReaderTest, WrongUserData) 
 {
-    FileReader reader("users.txt");
+    FileReader reader("test/users.txt");
     std::vector<std::shared_ptr<User>> res = reader.users();
     ASSERT_EQ(1,reader.get_err());
 }
 
-TEST(FileReaderTest, GetLastID) 
-{
-    FileReader reader("users.txt");
-    ASSERT_EQ(2,reader.get_last_id());
-}
 

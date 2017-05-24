@@ -12,6 +12,7 @@ public:
     std::vector<std::shared_ptr<User>> users();
     void set_err(int);
     int get_err() const;
+    std::vector<std::string> doc_types() const;
 private:
     std::string filename;
     int num_err;

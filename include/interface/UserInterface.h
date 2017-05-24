@@ -12,6 +12,7 @@ public:
     void logout();
     void info() const;
     void registration();
+    void show_docs() const;
 private:
     std::shared_ptr<User> user;
     LoginController login_controller;

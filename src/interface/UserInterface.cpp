@@ -9,6 +9,14 @@ void UserInterface::logout()
     std::cout << "Logout: OK" << std::endl;
 }
 
+void UserInterface::show_docs() const
+{
+    std::vector<std::string> types = login_controller.get_types();
+    for(uint i = 0; i < types.size(); i++)
+    {
+        std::cout << i+1 << "). " << types[i] << std::endl;
+    }
+}
 
 void UserInterface::login() 
 {
@@ -48,11 +56,10 @@ void UserInterface::registration()
         std::string name;
         std::getline(std::cin, name);
         std::string id = std::to_string(login_controller.get_last_id()+1);
-        std::shared_ptr<User> user = reg_controller.add_user(name,login,pass,id);
-        if (user != nullptr)
+        int st = reg_controller.add_user(name,login,pass,id);
+        if (st != 0)
         {
-            this->user = user;
-            std::cout << "You are successfully registered and logged in!" << std::endl;
+            std::cout << "You are successfully registered!\nNow, log in with the login command." << std::endl;
         }
         else
         {

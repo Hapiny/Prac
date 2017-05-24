@@ -3,7 +3,7 @@
 #include "FileReader.h"
 #include <iostream>
 
-LoginController::LoginController() : reader(std::shared_ptr<FileReader>(new FileReader("users/users.txt"))) {}
+LoginController::LoginController(std::string filename) : reader(std::shared_ptr<FileReader>(new FileReader(filename))) {}
 
 std::shared_ptr<User> LoginController::get_user(std::string login, std::string password) const
 {
@@ -16,6 +16,13 @@ std::shared_ptr<User> LoginController::get_user(std::string login, std::string p
         }
     }
     return nullptr;
+}
+
+std::vector<std::string> LoginController::get_types() const
+{
+    LoginController login_controller("doc_types.txt");
+    return reader->doc_types();
+
 }
 
 int LoginController::get_last_id() const
