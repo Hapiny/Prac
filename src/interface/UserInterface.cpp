@@ -9,6 +9,10 @@ void UserInterface::logout()
     std::cout << "Logout: OK" << std::endl;
 }
 
+std::shared_ptr<User> UserInterface::get_user() const {
+    return user;
+}
+
 void UserInterface::show_docs() const
 {
     std::vector<std::string> types = login_controller.get_types();
